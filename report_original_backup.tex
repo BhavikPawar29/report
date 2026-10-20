@@ -1,0 +1,356 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[left=3.0cm,right=2.25cm,top=2.5cm,bottom=2.4cm,headheight=15pt]{geometry}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,calc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{tocloft}
+
+% =====================================================================
+%  GCOERC NASHIK - T.E. COMPUTER ENGINEERING SEMINAR REPORT TEMPLATE
+%  Edit ONLY the 6 fields below, then write your chapters.
+%  Keep logo.jpg (college) and sppu.jpg (university) in the same folder.
+%  Compile with:  pdflatex report.tex  (run twice)  or  latexmk -pdf report.tex
+% =====================================================================
+\newcommand{\ttitle}{SEMINAR TITLE}            % title in normal case (used in header)
+\newcommand{\TTITLE}{SEMINAR TITLE IN CAPITALS} % same title in CAPITALS (cover/certificates)
+\newcommand{\studentname}{Student Name}
+\newcommand{\rollno}{000}
+\newcommand{\guidename}{Prof. Guide Name}
+\newcommand{\acadyear}{2026--27}
+
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+
+% ---------- chapter / section styling (as in college template) ----------
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\centering}{\large Chapter \thechapter}{10pt}{\large\uppercase}
+\titlespacing*{\chapter}{0pt}{0pt}{16pt}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{0.8em}{}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titlespacing*{\subsection}{0pt}{8pt}{3pt}
+
+% ---------- header / footer ----------
+
+\fancypagestyle{main}{%
+  \fancyhf{}
+  \fancyhead[C]{\scriptsize \ttitle}
+  \fancyfoot[C]{\small\thepage\\[1pt]\scriptsize Department of Computer Engineering, GCOERC, Nashik 2026--27}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}}
+\pagestyle{main}
+\fancypagestyle{plain}{\fancyhf{}%
+  \fancyhead[C]{\scriptsize \ttitle}
+  \fancyfoot[C]{\small\thepage\\[1pt]\scriptsize Department of Computer Engineering, GCOERC, Nashik 2026--27}
+  \renewcommand{\headrulewidth}{0.4pt}}
+
+\newcommand{\unnumchapter}[1]{%
+  \chapter*{#1}\addcontentsline{toc}{chapter}{#1}}
+
+% ---------- page border for cover and certificates ----------
+\newcommand{\pageborder}{%
+\begin{tikzpicture}[remember picture,overlay]
+\draw[line width=1.6pt] ($(current page.north west)+(1.5cm,-1.5cm)$) rectangle ($(current page.south east)+(-1.5cm,1.5cm)$);
+\end{tikzpicture}}
+
+% ---------- TOC look: chapters bold, sections indented ----------
+\renewcommand{\cftchapfont}{\bfseries\small}
+\renewcommand{\cftchappagefont}{\bfseries\small}
+\renewcommand{\cftsecfont}{\small}
+\renewcommand{\cftsecpagefont}{\small}
+\renewcommand{\cftsubsecfont}{\small}
+\renewcommand{\cftsubsecpagefont}{\small}
+\setlength{\cftbeforechapskip}{6pt}
+\setlength{\cftbeforesecskip}{1pt}
+\setcounter{tocdepth}{2}
+\renewcommand{\cfttoctitlefont}{\hfill\normalfont\large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftloftitlefont}{\hfill\normalfont\large\bfseries}
+\renewcommand{\cftafterloftitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftbeforeloftitleskip}{0pt}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+\renewcommand{\cftfigfont}{\small}
+\renewcommand{\cftfigpagefont}{\small}
+
+\begin{document}
+
+% ------------------------------ COVER ------------------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\pageborder
+\centering
+\singlespacing
+\vspace*{0.3cm}
+{\large\bfseries A\par}\vspace{6pt}
+{\large\bfseries SEMINAR REPORT\par}\vspace{6pt}
+{\large\bfseries ON\par}\vspace{10pt}
+{\Large\bfseries \TTITLE\par}
+\vspace{14pt}
+{\normalsize SUBMITTED TO THE SAVITRIBAI PHULE PUNE UNIVERSITY IN FULFILMENT OF THE REQUIREMENTS\\ FOR THE AWARD OF THE\par}
+\vspace{8pt}
+{\large\bfseries THIRD YEAR COMPUTER ENGINEERING\par}\vspace{8pt}
+{\large\bfseries BY\par}
+{\large\bfseries \studentname\par}
+{\normalsize (Roll No: \rollno)\par}\vspace{8pt}
+{\large\bfseries UNDER THE GUIDANCE OF\par}
+{\large\bfseries \guidename\par}\vspace{10pt}
+\includegraphics[height=3.6cm]{logo.jpg}\par\vspace{10pt}
+{\normalsize\bfseries DEPARTMENT OF COMPUTER ENGINEERING\\
+Guru Gobind Singh College of Engineering and Research Center, Nashik.\\
+Khalsa Educational Complex, Guru Gobind Singh Marg, Wadala--Pathardi Road, Indira Nagar, Nashik, Maharashtra 422009\\
+YEAR \acadyear\par}
+\end{titlepage}
+
+% --------------------------- CERTIFICATE 1 -------------------------
+\thispagestyle{empty}
+\pageborder
+\begin{center}
+\singlespacing
+\vspace*{0.4cm}
+{\normalsize\bfseries DEPARTMENT OF COMPUTER ENGINEERING\\
+Guru Gobind Singh College of Engineering and Research Center, Nashik\\
+Khalsa Educational Complex, Guru Gobind Singh Marg, Wadala--Pathardi Road, Indira Nagar, Nashik, Maharashtra 422009\\
+Year \acadyear\par}
+\vspace{10pt}
+\includegraphics[height=3.4cm]{logo.jpg}\\[14pt]
+{\large\bfseries CERTIFICATE}\\[8pt]
+{\bfseries This is to certify that seminar report entitled}\\[10pt]
+{\large\bfseries ``\TTITLE''}\\[10pt]
+is submitted as fulfilment of curriculum of the T.E.\ Computer Engineering\\[10pt]
+{\bfseries BY}\\[8pt]
+{\bfseries \studentname}\\
+{\bfseries (Roll No: \rollno)}
+\end{center}
+\vspace{40pt}
+\begin{center}
+\singlespacing\small
+\begin{tabular}{p{0.28\textwidth}p{0.36\textwidth}p{0.24\textwidth}}
+\guidename & Dr.\ Swati Khokale \& Mr.\ Ajit Pagar & Dr.\ Nita Thakare\\
+\textbf{Seminar Guide} & \textbf{Seminar Coordinator} & \textbf{Head of Dept.}
+\end{tabular}
+\end{center}
+\vfill
+{\singlespacing\noindent\hspace{0.6cm}\textbf{Place:} GCOERC, Nashik\\
+\hspace*{0.6cm}\textbf{Date:}\par}
+\vspace{1.4cm}
+\clearpage
+
+% --------------------------- CERTIFICATE 2 -------------------------
+\thispagestyle{empty}
+\pageborder
+\begin{center}
+\singlespacing
+\vspace*{0.4cm}
+{\normalsize Savitribai Phule Pune University\par}\vspace{6pt}
+\includegraphics[height=3.4cm]{sppu.jpg}\\[12pt]
+{\large\bfseries CERTIFICATE}\\[10pt]
+This is to certify that\\[8pt]
+{\bfseries \studentname}\\
+{\bfseries (Roll No: \rollno)}\\[10pt]
+Student of T.E.\ Computer\\[4pt]
+Was examined in Seminar Report entitled\\[10pt]
+{\large\bfseries ``\TTITLE''}\\[12pt]
+on \underline{\hspace{0.8cm}} / \underline{\hspace{0.8cm}} /2026\\[8pt]
+At\\[4pt]
+DEPARTMENT OF COMPUTER ENGINEERING,\\
+GURU GOBIND SINGH COLLEGE OF ENGINEERING AND RESEARCH CENTER, NASHIK\\[4pt]
+{\bfseries YEAR \acadyear}
+\end{center}
+\vspace{50pt}
+\begin{center}
+\begin{tabular}{p{0.38\textwidth}p{0.38\textwidth}}
+\dotfill & \dotfill\\
+\centering Internal Examiner & \centering External Examiner\tabularnewline
+\end{tabular}
+\end{center}
+\clearpage
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\onehalfspacing
+
+% ------------------------------ ABSTRACT ---------------------------
+\unnumchapter{ABSTRACT}
+Write a 150--250 word abstract here: the problem, the approach studied in the seminar, the main findings reported in the source paper(s), and the conclusion. Cite sources with \verb|\cite{key}|.
+
+\vspace{6pt}
+\noindent\textbf{\emph{Keywords---keyword 1; keyword 2; keyword 3; keyword 4.}}
+\clearpage
+
+% -------------------------- ACKNOWLEDGEMENT ------------------------
+\unnumchapter{ACKNOWLEDGEMENT}
+It is my immense pleasure to work on this seminar \textbf{\ttitle}. It is only the blessing of my divine master which has prompted and mentally equipped me to undergo the study of this seminar.
+
+I would like to thank \textbf{Prof.\ (Dr.) N.\ G.\ Nikam}, Principal, Guru Gobind Singh College of Engineering and Research Center, for giving me such an opportunity to develop practical knowledge about the subject. I am also thankful to \textbf{Dr.\ Nita M.\ Thakare}, Head of Computer Engineering Department, for her valuable encouragement at every phase of my seminar work and completion.
+
+I offer my sincere thanks to my guide \textbf{\guidename}, who very affectionately encouraged me to work on the subject and gave me valuable guidance from time to time. While preparing this seminar I am very much thankful to her/him.
+
+I am also grateful to the entire staff of Computer Engineering Department for their kind co-operation, which helped me in the successful completion of this seminar.
+
+\vspace{30pt}
+\hfill\begin{minipage}{0.45\textwidth}
+\singlespacing
+\textbf{\studentname}\\
+\textbf{Roll No: \rollno}\\[6pt]
+GCOERC, NASHIK.
+\end{minipage}
+\clearpage
+
+% ------------------------------- INDEX -----------------------------
+\begingroup
+\singlespacing
+\renewcommand{\contentsname}{INDEX}
+\addcontentsline{toc}{chapter}{INDEX}
+\tableofcontents
+\clearpage
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\listoffigures
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\onehalfspacing
+
+% ----------------------------- CHAPTER 1 ---------------------------
+\chapter{INTRODUCTION}
+Introduce the topic: what it is, why it matters, and the background needed to follow the report \cite{ref1}.
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox[c][4cm][c]{0.8\textwidth}{\centering Insert your figure here using\\ \texttt{\textbackslash includegraphics[width=0.8\textbackslash textwidth]\{figure1.png\}}}}
+\caption{Caption of the figure.}\label{fig:one}
+\end{figure}
+
+\section{Motivation}
+Why was this topic chosen? What real-world problem motivates it?
+
+\section{Problem Statement}
+State the problem addressed in one clear paragraph.
+
+% ----------------------------- CHAPTER 2 ---------------------------
+\chapter{OBJECTIVES}
+The main objectives of this seminar are:
+\begin{enumerate}[leftmargin=*]
+  \item To understand the fundamental concepts of \ldots
+  \item To study the working methodology and architecture of \ldots
+  \item To explore its applications in real-world scenarios.
+  \item To analyse its advantages, limitations and challenges.
+  \item To study future developments and scope in the selected field.
+\end{enumerate}
+
+% ----------------------------- CHAPTER 3 ---------------------------
+\chapter{LITERATURE REVIEW}
+\noindent\textbf{Title of Paper 1}\\
+Author et al.\ \cite{ref1} proposed \ldots\ Key findings \ldots\ Limitation \ldots
+
+\noindent\textbf{Title of Paper 2}\\
+Author et al.\ \cite{ref2} studied \ldots
+
+\noindent\textbf{Title of Paper 3}\\
+Author et al.\ \cite{ref3} presented \ldots
+
+% ----------------------------- CHAPTER 4 ---------------------------
+\chapter{METHODOLOGY / SYSTEM ARCHITECTURE}
+Explain the working of the system step by step.
+
+\section{System Architecture}
+Describe the architecture and refer to the diagram (Figure~\ref{fig:arch}).
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=1.4cm,
+  box/.style={draw,rounded corners,minimum width=2.8cm,minimum height=1cm,align=center,font=\small},
+  arr/.style={-{Stealth[length=2.5mm]},thick}]
+\node[box,fill=blue!10] (a) {Input};
+\node[box,fill=green!10,right=of a] (b) {Processing};
+\node[box,fill=orange!15,right=of b] (c) {Output};
+\draw[arr] (a)--(b); \draw[arr] (b)--(c);
+\end{tikzpicture}
+\caption{Block diagram of the system.}\label{fig:arch}
+\end{figure}
+
+\section{Working}
+\begin{enumerate}[leftmargin=*]
+  \item Step one \ldots
+  \item Step two \ldots
+  \item Step three \ldots
+\end{enumerate}
+
+\begin{table}[htbp]
+\centering\small\singlespacing
+\caption{Sample table}\label{tab:one}
+\begin{tabular}{|p{4cm}|p{8cm}|}
+\hline
+\textbf{Parameter} & \textbf{Value / Description}\\\hline
+Item 1 & Description\\\hline
+Item 2 & Description\\\hline
+\end{tabular}
+\end{table}
+
+An equation example:
+\begin{equation}
+y = f(x) + \varepsilon .
+\end{equation}
+
+% ----------------------------- CHAPTER 5 ---------------------------
+\chapter{APPLICATIONS}
+The technology discussed in this seminar has applications in various domains.
+
+\section{Application 1 -- Name of Domain}
+Explain how the technology is used, the problem it addresses and the benefits.
+
+\section{Application 2 -- Name of Domain}
+Describe its role, functionality and practical significance.
+
+\section{Application 3 -- Name of Domain}
+Explain how it can be implemented and what advantages it provides.
+
+\section{Application 4 -- Name of Domain}
+Discuss another important real-world application.
+
+% ----------------------------- CHAPTER 6 ---------------------------
+\chapter{ADVANTAGES AND LIMITATIONS}
+\section{Advantages}
+\begin{itemize}[leftmargin=*]
+  \item Advantage 1.
+  \item Advantage 2.
+  \item Advantage 3.
+\end{itemize}
+\section{Limitations}
+\begin{itemize}[leftmargin=*]
+  \item Limitation 1.
+  \item Limitation 2.
+  \item Limitation 3.
+\end{itemize}
+
+% ----------------------------- CHAPTER 7 ---------------------------
+\chapter{CONCLUSION}
+Summarise what was studied, the main findings, the limits of the work, and the future scope.
+
+% ----------------------------- REFERENCES --------------------------
+\renewcommand{\bibname}{References}
+\begin{singlespacing}
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{REFERENCES}
+\bibitem{ref1} A. Author, B. Author, and C. Author, ``Title of the paper,'' \emph{Journal Name}, vol. X, no. Y, pp. 1--10, Year, doi: 10.xxxx/xxxxx.
+\bibitem{ref2} A. Author \emph{et al.}, ``Title of the paper,'' in \emph{Proc. Conference Name}, Year, pp. 1--8.
+\bibitem{ref3} A. Author, ``Title of the paper,'' arXiv:xxxx.xxxxx, Year.
+\end{thebibliography}
+\end{singlespacing}
+
+\end{document}
