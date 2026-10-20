@@ -273,28 +273,22 @@ The main objectives of this seminar are:
 
 % ----------------------------- CHAPTER 3 ---------------------------
 \chapter{LITERATURE REVIEW}
-The related work reviewed for this seminar is summarised in Table~\ref{tab:lit}.
+The literature relevant to this seminar can be grouped into four themes: the conceptual foundations of agentic AI, the architectures and enabling components that realise it, multi-agent coordination and communication, and the evaluation of agentic systems. This section reviews the available sources along these themes and identifies the gaps that motivate the study of an agentic AI system for frictionless parking.
 
-\begin{table}[htbp]
-\centering\small\singlespacing
-\setlength{\tabcolsep}{3pt}
-\caption{Literature survey of related work}\label{tab:lit}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{0.9cm}|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{3.8cm}|>{\raggedright\arraybackslash}p{3.8cm}|>{\raggedright\arraybackslash}p{2.8cm}|}
-\hline
-\textbf{Sr. No} & \textbf{Author \& Year} & \textbf{Paper Title} & \textbf{Key Findings} & \textbf{Limitation / Gap}\\
-\hline
-1 & Miehling et al.\ (2025)~\cite{ref7} & Agentic AI Needs a Systems Theory & Multiple AI agents can work together to solve problems. Their interactions help complete complex tasks. & Agents may sometimes fail. Better coordination between agents is needed.\\
-\hline
-2 & A.\ Khamis (2025)~\cite{ref1} & Agentic AI Systems: Architecture and Evaluation Using a Frictionless Parking Scenario & Explains how AI agents can help with parking. Studies searching, interaction, and response time. & Only some agents were tested. The complete system needs more testing.\\
-\hline
-3 & Mishra \& Senapati (2025)~\cite{ref4} & Retail Resilience Engine: An Agentic AI Framework for Building Reliable Retail Systems & AI agents can automate retail tasks. Testing helps make these systems more reliable. & Focuses mainly on retail systems. Does not cover parking and navigation.\\
-\hline
-4 & Xiao, Shi, \& Zhang (2025)~\cite{ref3} & Towards Agentic AI Networking in 6G: A Generative Foundation Model-as-Agent Approach & AI agents can help manage mobile networks. They can automate network-related tasks. & Focuses mainly on mobile networks. Does not focus on parking systems.\\
-\hline
-5 & Kshetri (2025)~\cite{ref5} & From Predictive and Generative to Agentic AI: Shaping the Future of Marketing Operations and Strategies & AI agents can automate marketing tasks. They can help businesses improve their work. & Focuses mainly on marketing. Does not cover real-world navigation.\\
-\hline
-\end{tabular}
-\end{table}
+\noindent\textbf{Conceptual foundations and agency.}
+Acharya et al.~\cite{ref2} present agentic AI as a paradigm in which autonomous systems pursue complex, long-horizon goals with minimal human supervision, distinguishing it from classical rule-based AI and from generative AI through its autonomy, goal-orientation and adaptability. They argue that the development of such systems rests on reinforcement learning, goal-oriented architectures and adaptive control, and that these foundations allow an agent to revise its strategy as conditions change. Complementing this capability-focused view, Miehling et al.~\cite{ref7} contend that the field is overly focused on individual model capability and that a systems-theoretic perspective is required to understand the behaviour of an agentic system as a whole. They formalise \emph{functional agency} through three conditions---action generation, an outcome model, and adaptation---and argue that the collective agency of a system can emerge from the interaction of comparatively simple agents with one another, with humans and with the environment, rather than from the capability of any single component. Their analysis also highlights two persistent weaknesses of current LLM-based agents, namely limited causal reasoning and a lack of metacognitive awareness, which they treat as open challenges rather than solved problems.
+
+\noindent\textbf{Architectures, memory and tool use.}
+Derouiche et al.~\cite{ref8} provide a systematic comparison of leading agentic AI frameworks, including CrewAI, LangGraph, AutoGen, Semantic Kernel, Agno, Google ADK and MetaGPT, and evaluate them along architectural principles, communication mechanisms, memory management, safety guardrails and service-oriented alignment. Their comparison shows that these frameworks, despite different design priorities, share a common set of components: a foundation model for reasoning, external tools for action, memory for context, and guardrails for safety and validation. They further show that the memory support offered by frameworks varies considerably, with some providing only short-term, session-level state while others support long-term, semantic, procedural and episodic memory. The survey of Acharya et al.~\cite{ref2} reaches a similar conclusion, identifying tool use and memory mechanisms---in particular episodic and semantic memory---as core capabilities that allow an agent to retain context and improve its decisions over time.
+
+\noindent\textbf{Multi-agent coordination and communication.}
+Both the framework comparison and the survey treat multi-agent systems as the principal architectural response to tasks that exceed the scope of a single agent. Acharya et al.~\cite{ref2} describe multi-agent systems as a division of a complex goal among autonomous agents that collaborate or compete, and they identify multi-agent coordination and decentralised decision-making as important directions for future work. Derouiche et al.~\cite{ref8} observe that coordination in practice depends on communication protocols, and compare protocols such as the Contract Net Protocol, A2A, ANP and Agora. Their key finding is that although modern protocols are moving towards service-oriented interoperability, fragmentation persists: frameworks operate in silos, agent roles are often fixed, and agents generally cannot discover one another at runtime. This interoperability gap, they argue, is the main barrier to composing agents built with different frameworks into a single system.
+
+\noindent\textbf{Evaluation and application.}
+The sources differ markedly in how they evaluate agentic systems. The survey of Acharya et al.~\cite{ref2} reviews benchmarks and datasets and the performance measures used to assess agentic implementations, but does not report new experiments. Miehling et al.~\cite{ref7} is a position paper and presents no empirical evaluation. Derouiche et al.~\cite{ref8} evaluate frameworks qualitatively against their documented capabilities. Xiao et al.~\cite{ref3} provide the only quantitative evaluation among these sources: they propose AgentNet, an agentic networking architecture in which generative foundation models act as agents, and implement a prototype on an open-source 5G platform with a robotic-arm digital-twin scenario. In that scenario they report that their agents learn to predict spectrum utilisation and network traffic with above 89\% accuracy, illustrating how agent performance can be measured against task goals rather than only against model accuracy.
+
+\noindent\textbf{Gaps and relevance.}
+Taken together, the reviewed work shows that agentic AI is well understood at the level of individual components, but that three problems remain open: the lack of standardised, interoperable communication between agents; the difficulty of evaluating agents against goal-level rather than model-level metrics; and the limited empirical validation of complete multi-agent systems. These gaps are directly relevant to the present seminar, which studies an agentic AI system in which seven specialised agents must coordinate through memory and external tools to deliver a frictionless parking experience. The literature therefore motivates the seminar's focus on multi-agent coordination, memory and tool use, and on the evaluation of agent behaviour.
 
 % ----------------------------- CHAPTER 4 ---------------------------
 \chapter{METHODOLOGY / SYSTEM ARCHITECTURE}
@@ -418,12 +412,13 @@ In the future, the system can be improved by testing more AI models, adding long
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{REFERENCES}
 \bibitem{ref1} A. Khamis, ``Agentic AI Systems: Architecture and Evaluation Using a Frictionless Parking Scenario,'' \emph{IEEE Access}, vol. 13, pp. 126052--126069, 2025.
-\bibitem{ref2} D. B. Acharya, K. Kuppan, and D. Bhaskaracharya, ``Agentic AI: Autonomous Intelligence for Complex Goals---A Comprehensive Survey,'' \emph{IEEE Access}, vol. 13, pp. 18912--18936, 2025.
+\bibitem{ref2} D. B. Acharya, K. Kuppan, and B. Divya, ``Agentic AI: Autonomous Intelligence for Complex Goals---A Comprehensive Survey,'' \emph{IEEE Access}, vol. 13, pp. 18912--18936, 2025.
 \bibitem{ref3} Y. Xiao, G. Shi, and P. Zhang, ``Towards Agentic AI Networking in 6G: A Generative Foundation Model-as-Agent Approach,'' arXiv preprint arXiv:2503.15764, 2025.
 \bibitem{ref4} L. N. Mishra and B. Senapati, ``Retail Resilience Engine: An Agentic AI Framework for Building Reliable Retail Systems With Test-Driven Development Approach,'' \emph{IEEE Access}, vol. 13, pp. 50226--50243, 2025.
 \bibitem{ref5} N. Kshetri, ``From Predictive and Generative to Agentic AI: Shaping the Future of Marketing Operations and Strategies,'' \emph{Computer}, vol. 58, no. 4, pp. 121--129, 2025.
 \bibitem{ref6} A. Khamis, ``Agentic AI Systems: Architecture and Evaluation Using a Frictionless Parking Scenario,'' \emph{IEEE Access}, vol. 13, pp. 126052--126069, 2025.
 \bibitem{ref7} E. Miehling \emph{et al.}, ``Agentic AI Needs a Systems Theory,'' arXiv preprint arXiv:2503.00237, 2025.
+\bibitem{ref8} H. Derouiche, Z. Brahmi, and H. Mazeni, ``Agentic AI Frameworks: Architectures, Protocols, and Design Challenges,'' arXiv preprint arXiv:2508.10146, 2025.
 \end{thebibliography}
 \end{singlespacing}
 

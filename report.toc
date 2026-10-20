@@ -7,21 +7,21 @@
 \contentsline {section}{\numberline {1.2}Problem Statement}{2}{section.1.2}%
 \contentsline {chapter}{\numberline {2}OBJECTIVES}{3}{chapter.2}%
 \contentsline {chapter}{\numberline {3}LITERATURE REVIEW}{4}{chapter.3}%
-\contentsline {chapter}{\numberline {4}METHODOLOGY / SYSTEM ARCHITECTURE}{5}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Overview of the Proposed System}{5}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Architecture of an AI Agent}{5}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Sequence of a Parking Request}{6}{subsection.4.2.1}%
-\contentsline {chapter}{\numberline {5}APPLICATIONS}{8}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Smart Urban Parking}{8}{section.5.1}%
-\contentsline {section}{\numberline {5.2}EV Charging and In-Vehicle Assistants}{8}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Smart Mobility and Smart Cities}{8}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Other Industry Domains}{8}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Software Development}{9}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Workflow Automation}{9}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Data Analysis}{9}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Autonomous Task Execution}{9}{section.5.8}%
-\contentsline {chapter}{\numberline {6}ADVANTAGES AND LIMITATIONS}{10}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Advantages}{10}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Limitations}{10}{section.6.2}%
-\contentsline {chapter}{\numberline {7}CONCLUSION}{11}{chapter.7}%
-\contentsline {chapter}{REFERENCES}{12}{chapter*.6}%
+\contentsline {chapter}{\numberline {4}METHODOLOGY / SYSTEM ARCHITECTURE}{6}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Overview of the Proposed System}{6}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Architecture of an AI Agent}{6}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Sequence of a Parking Request}{7}{subsection.4.2.1}%
+\contentsline {chapter}{\numberline {5}APPLICATIONS}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Smart Urban Parking}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}EV Charging and In-Vehicle Assistants}{9}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Smart Mobility and Smart Cities}{9}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Other Industry Domains}{9}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Software Development}{10}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Workflow Automation}{10}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Data Analysis}{10}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Autonomous Task Execution}{10}{section.5.8}%
+\contentsline {chapter}{\numberline {6}ADVANTAGES AND LIMITATIONS}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Advantages}{11}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Limitations}{11}{section.6.2}%
+\contentsline {chapter}{\numberline {7}CONCLUSION}{12}{chapter.7}%
+\contentsline {chapter}{REFERENCES}{13}{chapter*.5}%
